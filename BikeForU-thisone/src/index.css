@@ -1,0 +1,574 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Natural/Adventure Theme - Converted from SwiftUI */
+
+/* CSS Variables for Natural Theme Support */
+:root {
+  /* Natural Color Palette - Light Theme */
+  --bg-primary: #f8f6f1; /* Warm cream/beige */
+  --bg-secondary: #f0ede5; /* Lighter cream */
+  --bg-tertiary: #ffffff; /* Pure white for cards */
+  --text-primary: #2d2d2d; /* Deep brown */
+  --text-secondary: #5a5a5a; /* Muted brown */
+  --text-tertiary: #8a8a8a; /* Light muted brown */
+  --border-primary: #d2b48c; /* Tan */
+  --border-secondary: #c0a876; /* Darker tan */
+  
+  /* Primary Colors */
+  --primary-color: #654321; /* Dark brown */
+  --primary-hover: #4a2f18; /* Darker brown */
+  --secondary-color: #A0522D; /* Sienna */
+  --accent-color: #8B4513; /* Saddle brown */
+  
+  /* Button Colors */
+  --button-bg: #8B4513; /* Saddle brown */
+  --button-text: #f8f6f1; /* Cream white */
+  --button-border: #654321; /* Dark brown */
+  --button-hover: #654321; /* Dark brown */
+  
+  /* Status Colors */
+  --success-color: #228B22; /* Forest green */
+  --warning-color: #DAA520; /* Goldenrod */
+  --error-color: #8B0000; /* Dark red */
+  
+  /* Adventure Colors */
+  --trail-color: #228B22; /* Forest green */
+  --mountain-color: #696969; /* Dim gray */
+  --sky-color: #87CEEB; /* Sky blue */
+  --sunset-color: #8B4513; /* Saddle brown */
+  --earth-color: #C0C0C0; /* Silver */
+  --forest-color: #A0522D; /* Sienna */
+  --meadow-color: #556B2F; /* Dark olive green */
+  --sunrise-color: #FF8C00; /* Dark orange */
+  --ocean-color: #4682B4; /* Steel blue */
+  
+  /* Shadows */
+  --shadow-primary: 0 1px 3px 0 rgba(139, 115, 85, 0.3), 0 1px 2px 0 rgba(139, 115, 85, 0.2);
+  --shadow-secondary: 0 4px 6px -1px rgba(139, 115, 85, 0.3), 0 2px 4px -1px rgba(139, 115, 85, 0.2);
+  --shadow-color: rgba(139, 115, 85, 0.3);
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a; /* Deep charcoal */
+  --bg-secondary: #2a2a2a; /* Medium charcoal */
+  --bg-tertiary: #2a2a2a; /* Medium charcoal for cards */
+  --text-primary: #e8e8e8; /* Soft white */
+  --text-secondary: #b0b0b0; /* Muted white */
+  --text-tertiary: #888888; /* Light muted white */
+  --border-primary: #696969; /* Dim gray */
+  --border-secondary: #555555; /* Darker gray */
+  
+  /* Primary Colors */
+  --primary-color: #CD853F; /* Peru brown */
+  --primary-hover: #B8860B; /* Dark goldenrod */
+  --secondary-color: #DEB887; /* Burlywood */
+  --accent-color: #D2691E; /* Chocolate orange */
+  
+  /* Button Colors */
+  --button-bg: #D2691E; /* Chocolate orange */
+  --button-text: #f8f6f1; /* Cream white */
+  --button-border: #CD853F; /* Peru brown */
+  --button-hover: #CD853F; /* Peru brown */
+  
+  /* Adventure Colors */
+  --trail-color: #32CD32; /* Lime green */
+  --mountain-color: #A9A9A9; /* Dark gray */
+  --sky-color: #4682B4; /* Steel blue */
+  --sunset-color: #D2691E; /* Chocolate orange */
+  --earth-color: #808080; /* Gray */
+  --forest-color: #DEB887; /* Burlywood */
+  --meadow-color: #6B8E23; /* Olive drab */
+  --sunrise-color: #FFA500; /* Orange */
+  --ocean-color: #87CEEB; /* Sky blue */
+  
+  /* Shadows */
+  --shadow-primary: 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-secondary: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Natural Button Styles - Converted from SwiftUI */
+@layer components {
+  .btn-natural {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--button-text);
+    background-color: var(--button-bg);
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    transform: scale(1);
+  }
+
+  .btn-natural:hover {
+    background-color: var(--button-hover);
+    transform: scale(0.96);
+  }
+
+  .btn-natural:active {
+    transform: scale(0.96);
+  }
+
+  .btn-secondary-natural {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--button-bg);
+    background-color: transparent;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 2px solid var(--button-bg);
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    transform: scale(1);
+  }
+
+  .btn-secondary-natural:hover {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transform: scale(0.96);
+  }
+
+  .btn-secondary-natural:active {
+    transform: scale(0.96);
+  }
+
+  /* Updated Primary Buttons */
+  .btn-primary {
+    @apply font-medium transition-all duration-150 rounded-lg transform;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--button-hover);
+    transform: scale(0.96);
+  }
+
+  .btn-secondary {
+    @apply font-medium transition-all duration-150 rounded-lg transform;
+    background-color: var(--secondary-color);
+    color: var(--button-text);
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--primary-color);
+    transform: scale(0.96);
+  }
+
+  .btn-outline {
+    @apply font-medium transition-all duration-150 rounded-lg transform;
+    border: 2px solid var(--button-bg);
+    color: var(--button-bg);
+    background-color: transparent;
+    padding: 10px 22px;
+    font-size: 16px;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transform: scale(0.96);
+  }
+
+  /* Natural Cards */
+  .card-natural {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    box-shadow: var(--shadow-primary);
+    transition: all 0.3s ease;
+    padding: 16px;
+  }
+
+  .card-natural:hover {
+    box-shadow: var(--shadow-secondary);
+    transform: translateY(-2px);
+  }
+
+  .card {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    box-shadow: var(--shadow-primary);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-secondary);
+  }
+
+  /* Natural Input Fields */
+  .input-field-natural {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+
+  .input-field-natural:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+  }
+
+  /* Spinner */
+  .spinner {
+    @apply animate-spin rounded-full h-12 w-12 border-b-2;
+    border-color: var(--accent-color);
+  }
+
+  /* Gradient Text */
+  .gradient-text-natural {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Adventure-Inspired Utility Classes */
+@layer utilities {
+  /* Adventure Colors */
+  .text-trail { color: var(--trail-color); }
+  .text-mountain { color: var(--mountain-color); }
+  .text-sky { color: var(--sky-color); }
+  .text-sunset { color: var(--sunset-color); }
+  .text-earth { color: var(--earth-color); }
+  .text-forest { color: var(--forest-color); }
+  .text-meadow { color: var(--meadow-color); }
+  .text-sunrise { color: var(--sunrise-color); }
+  .text-ocean { color: var(--ocean-color); }
+
+  .bg-trail { background-color: var(--trail-color); }
+  .bg-mountain { background-color: var(--mountain-color); }
+  .bg-sky { background-color: var(--sky-color); }
+  .bg-sunset { background-color: var(--sunset-color); }
+  .bg-earth { background-color: var(--earth-color); }
+  .bg-forest { background-color: var(--forest-color); }
+  .bg-meadow { background-color: var(--meadow-color); }
+  .bg-sunrise { background-color: var(--sunrise-color); }
+  .bg-ocean { background-color: var(--ocean-color); }
+
+  /* Natural Gradients */
+  .bg-gradient-natural {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  }
+
+  .bg-gradient-adventure {
+    background: linear-gradient(135deg, var(--trail-color) 0%, var(--forest-color) 50%, var(--sunset-color) 100%);
+  }
+
+  .bg-gradient-earth {
+    background: linear-gradient(135deg, var(--earth-color) 0%, var(--mountain-color) 100%);
+  }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--shadow-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--shadow-color);
+  }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) var(--bg-secondary);
+}
+
+/* Focus Styles */
+*:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Selection Styles */
+::selection {
+  background-color: var(--accent-color);
+  color: var(--button-text);
+}
+
+/* Loading States */
+.loading-skeleton {
+  background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Status Indicators */
+.status-online {
+  @apply w-3 h-3 rounded-full;
+  background-color: var(--success-color);
+}
+
+.status-offline {
+  @apply w-3 h-3 rounded-full;
+  background-color: var(--mountain-color);
+}
+
+.status-away {
+  @apply w-3 h-3 rounded-full;
+  background-color: var(--warning-color);
+}
+
+/* Badge Styles */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  background-color: rgba(34, 139, 34, 0.1);
+  color: var(--success-color);
+}
+
+.badge-warning {
+  background-color: rgba(218, 165, 32, 0.1);
+  color: var(--warning-color);
+}
+
+.badge-error {
+  background-color: rgba(139, 0, 0, 0.1);
+  color: var(--error-color);
+}
+
+.badge-info {
+  background-color: rgba(70, 130, 180, 0.1);
+  color: var(--sky-color);
+}
+
+/* Interactive Elements */
+.interactive {
+  @apply transition-all duration-300 transform hover:scale-105;
+}
+
+.interactive:hover {
+  box-shadow: var(--shadow-secondary);
+}
+
+/* Custom Utility Classes */
+.shadow-natural {
+  box-shadow: var(--shadow-primary);
+}
+
+.shadow-natural-lg {
+  box-shadow: var(--shadow-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .btn-primary, .btn-secondary, .btn-outline, .btn-natural, .btn-secondary-natural {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .card, .card-natural {
+    padding: 12px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #000000;
+    --accent-color: #000000;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --border-primary: #000000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark Mode Specific Overrides */
+[data-theme="dark"] .badge-success {
+  background-color: rgba(50, 205, 50, 0.1);
+  color: var(--trail-color);
+}
+
+[data-theme="dark"] .badge-warning {
+  background-color: rgba(255, 165, 0, 0.1);
+  color: var(--sunrise-color);
+}
+
+[data-theme="dark"] .badge-error {
+  background-color: rgba(139, 0, 0, 0.1);
+  color: var(--error-color);
+}
+
+[data-theme="dark"] .badge-info {
+  background-color: rgba(135, 206, 235, 0.1);
+  color: var(--ocean-color);
+}
+
+/* Theme Transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+} 
